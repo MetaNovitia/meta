@@ -1,0 +1,61 @@
+.title {
+    color: white;
+    font-size: 80px;
+}
+
+.subtitle{
+    color: white;
+    font-size: 20px;
+}
+
+.head {
+    color: white;
+    font-size: 40px;
+    letter-spacing: 10px;
+    margin-left: 40px;
+    margin-right: 70px;
+    text-orientation: sideways;
+    max-height: 600px;
+}
+
+.slide {
+    width: 100%;
+}
+
+.slides {
+    max-width: 75%;
+}
+
+.codes {
+    text-align: left;
+}
+
+@font-face {
+    font-family: "sunshine";
+    src: url("fonts/Sunshine.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "historial";
+    src: url("fonts/TheHistoriaDemo.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "fire";
+    src: url("fonts/Breathe\ Fire\ II.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "pinch";
+    src: url("fonts/Pinch\ My\ Ride.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "revenant";
+    src: url("fonts/Revenant.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "scared";
+    src: url("fonts/Scared\ of\ the\ Unknown.otf") format("opentype");
+}
