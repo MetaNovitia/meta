@@ -178,7 +178,7 @@ export default class Home extends Component {
                         backgroundImage: this.url,
                         backgroundRepeat: "no-repeat",
                         backgroundAttachment: "fixed",
-                        backgroundPosition: "center",
+                        backgroundPosition: "top",
                         backgroundSize: (this.imgx).toString() + "px "+ (this.imgy).toString() + "px"
                     }}
             >

@@ -14,7 +14,14 @@ export default class Tabs extends Component {
     this.state = {
       activeTab: 2
     };
+
     
+
+    this.c = "slides";
+    if(window.mobilecheck()){
+      this.c = "";
+    }
+
     for(var i=0; i<this.topic.length; i++){
         var cname = "topicbtn";
         if(i===this.state.activeTab){
@@ -73,7 +80,7 @@ export default class Tabs extends Component {
       return null;
     }
     return (
-      <Col className="slides">
+      <Col className={this.c}>
         <div>{this.topics}</div>
         <div><br/><br/></div>
         <TabContent activeTab={this.state.activeTab}>

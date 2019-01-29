@@ -82,6 +82,7 @@ export default class Favorites extends Component {
                                     backgroundColor: this.color,
                                     fontSize: (this.x/70).toString()+"px"
                                 }}
+                                onClick={this.toggle}
                         >
                             <Row className="rowflip">
                                 {this.q}
