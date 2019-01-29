@@ -14,21 +14,17 @@ export default class Tabs extends Component {
     this.state = {
       activeTab: 2
     };
-
-    // this.topics.push(
-    //   <Button key = {0}
-    //           id = {0}
-    //           onClick = {this.toggle}
-    //           className="opn">
-    //   {this.topic[0]}
-    //   </Button>
-    // );
+    
     for(var i=0; i<this.topic.length; i++){
+        var cname = "topicbtn";
+        if(i===this.state.activeTab){
+          cname = "opn";
+        }
         this.topics.push(
           <Button key = {i}
                   id = {i}
                   onClick = {this.toggle}
-                  className="topicbtn">
+                  className={cname}>
           {this.topic[i]}
           </Button>
         );
