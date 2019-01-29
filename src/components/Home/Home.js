@@ -3,7 +3,7 @@ import {Container, Row} from 'reactstrap';
 import NavBar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import './Home.css';
-import './backcolors.css';
+import '../backcolors.css';
 
 export default class Home extends Component {
 
@@ -36,6 +36,7 @@ export default class Home extends Component {
             this.imgy=this.y
         }
 
+        document.body.style.backgroundColor = "rgb(48, 47, 47)";
         this.screeny = window.screen.height
         this.screenx = window.screen.width
 
@@ -181,7 +182,7 @@ export default class Home extends Component {
                         backgroundSize: (this.imgx).toString() + "px "+ (this.imgy).toString() + "px"
                     }}
             >
-                <NavBar open="home"></NavBar>
+                <NavBar f="black"></NavBar>
                 <Row    className="title center"
                         onClick={this.clicked}
                         style={{

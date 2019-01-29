@@ -1,0 +1,15 @@
+.pc{
+    width: 100%;
+    margin-right:0;
+    margin-left:0;
+    margin-bottom: 10%;
+    border-radius: 20px;
+    padding: 0;
+    border: 0px, transparent;
+    display: flex;
+}
+
+.nomar{
+    margin: 0;
+    padding: 1%;
+}

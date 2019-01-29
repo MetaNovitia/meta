@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import './Navbar.css';
+import { Link } from 'react-router-dom';
 import { NavbarBrand, Navbar, Nav, NavItem, NavLink, Collapse, NavbarToggler} from 'reactstrap';
 
 class Navigation extends Component {
   constructor(props) {
     super(props);
-
+    
     this.toggle = this.toggle.bind(this);
     this.state = {
       isOpen: false
@@ -34,16 +35,35 @@ class Navigation extends Component {
 
   render() {
     return (
-      <Navbar className="nav" light expand="md">
-          <NavbarBrand href="/">reactstrap</NavbarBrand>
+      <Navbar className="nav" dark expand="md">
+          <NavbarBrand href="/"
+            style={
+              {
+                color: this.props.f
+              }
+            }
+          >MN</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/components/">Components</NavLink>
+                <NavLink  tag={Link} 
+                          to="/About"
+                          style={
+                            {
+                              color: this.props.f
+                            }
+                          }
+                >About</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+                <NavLink href="/"
+                    style={
+                      {
+                        color: this.props.f
+                      }
+                    }
+                >Connect</NavLink>
               </NavItem>
             </Nav>
           </Collapse>
