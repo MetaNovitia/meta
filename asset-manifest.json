@@ -1,16 +1,16 @@
 {
   "main.css": "/meta/static/css/main.040d84d7.chunk.css",
-  "main.js": "/meta/static/js/main.d4554077.chunk.js",
-  "main.js.map": "/meta/static/js/main.d4554077.chunk.js.map",
+  "main.js": "/meta/static/js/main.cff39b38.chunk.js",
+  "main.js.map": "/meta/static/js/main.cff39b38.chunk.js.map",
   "static/css/1.54d8ce3f.chunk.css": "/meta/static/css/1.54d8ce3f.chunk.css",
   "static/js/1.b42b758b.chunk.js": "/meta/static/js/1.b42b758b.chunk.js",
   "static/js/1.b42b758b.chunk.js.map": "/meta/static/js/1.b42b758b.chunk.js.map",
   "runtime~main.js": "/meta/static/js/runtime~main.cffb0b4c.js",
   "runtime~main.js.map": "/meta/static/js/runtime~main.cffb0b4c.js.map",
-  "static/media/backcolors.css": "/meta/static/media/Revenant.bd2f6100.otf",
-  "static/css/main.040d84d7.chunk.css.map": "/meta/static/css/main.040d84d7.chunk.css.map",
+  "static/media/backcolors.css": "/meta/static/media/TheHistoriaDemo.b6881b98.ttf",
   "static/css/1.54d8ce3f.chunk.css.map": "/meta/static/css/1.54d8ce3f.chunk.css.map",
+  "static/css/main.040d84d7.chunk.css.map": "/meta/static/css/main.040d84d7.chunk.css.map",
   "index.html": "/meta/index.html",
-  "precache-manifest.6f74359a5d954b6c4880722556b57d5a.js": "/meta/precache-manifest.6f74359a5d954b6c4880722556b57d5a.js",
+  "precache-manifest.be2c64cc15a205654a2c7eab507ffe2c.js": "/meta/precache-manifest.be2c64cc15a205654a2c7eab507ffe2c.js",
   "service-worker.js": "/meta/service-worker.js"
 }
