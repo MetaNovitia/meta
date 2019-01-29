@@ -4,6 +4,8 @@ import NavBar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import Tabs from './Tabs/Tabs';
 import Photos from './Photos/Photos';
+import Favorites from './Favorites/Favorites';
+import $ from 'jquery';
 import '../backcolors.css'
 import './About.css';
 
@@ -12,6 +14,9 @@ export default class About extends Component {
     constructor(props){
         super(props);
         this.toggle = this.toggle.bind(this);
+        this.processData = this.processData.bind(this);
+        this.favorites = [];
+        this.qa = [];
 
         this.state = {
             family: false,
@@ -31,6 +36,53 @@ export default class About extends Component {
             document.getElementsByTagName('body')[0].clientHeight;
 
         window.onresize = this.toggle
+
+        this.tabs = <Tabs   items = {
+                    [<Photos></Photos>,
+                    <Row>2</Row>,
+                    <Favorites favs = {this.favorites}></Favorites>,
+                    <Row>4</Row>,
+                    <Row>5</Row>]
+                    } 
+                    topics={["Photos","Q&A","Favorites","RankLists","WordCloud"]}></Tabs>
+
+
+        $.ajax({
+            url: "about.csv",
+            context: document.body,
+        }).done(this.processData);
+
+    }
+
+    processData(data) {
+
+        data = data.split('\n');
+
+        for(var i=1; i<data.length; i++){
+            var line = data[i].split(',');
+            var temp = "";
+            while(line.length>3){
+                temp=','+line.pop()+temp;
+            }
+            line[2]+=temp
+            
+            if(line[0]==="Favorite"){
+                this.favorites.push(line);
+            }else if(line[0]==="QA"){
+                this.qa.push(line);
+            }
+        }
+
+        this.tabs = <Tabs   items = {
+            [<Photos></Photos>,
+            <Row>2</Row>,
+            <Favorites favs = {this.favorites}></Favorites>,
+            <Row>4</Row>,
+            <Row>5</Row>]
+            } 
+            topics={["Photos","Q&A","Favorites","RankLists","WordCloud"]}></Tabs>
+
+        this.toggle();
     }
 
     toggle() {
@@ -70,8 +122,7 @@ export default class About extends Component {
 
                 <Row    className="center"
                 >
-                    <Tabs   items = {[<Photos></Photos>,<Row>2</Row>,<Row>3</Row>,<Row>4</Row>,<Row>5</Row>]} 
-                            topics={["Photos","Q&A","Favorites","RankLists","WordCloud"]}></Tabs>
+                    {this.tabs}
                 </Row>
 
                 <Row    className="garden center"

@@ -36,7 +36,7 @@ class Navigation extends Component {
   render() {
     return (
       <Navbar className="nav" dark expand="md">
-          <NavbarBrand href="/"
+          <NavbarBrand tag={Link} to="/"
             style={
               {
                 color: this.props.f
@@ -57,7 +57,7 @@ class Navigation extends Component {
                 >About</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/"
+                <NavLink tag={Link} to="/"
                     style={
                       {
                         color: this.props.f

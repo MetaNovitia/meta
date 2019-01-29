@@ -12,18 +12,18 @@ export default class Tabs extends Component {
     this.topics = [];
     this.items = props.items;
     this.state = {
-      activeTab: 0
+      activeTab: 2
     };
 
-    this.topics.push(
-      <Button key = {100}
-              id = {100}
-              onClick = {this.toggle}
-              className="opn">
-      {this.topic[0]}
-      </Button>
-    );
-    for(var i=1; i<this.topic.length; i++){
+    // this.topics.push(
+    //   <Button key = {0}
+    //           id = {0}
+    //           onClick = {this.toggle}
+    //           className="opn">
+    //   {this.topic[0]}
+    //   </Button>
+    // );
+    for(var i=0; i<this.topic.length; i++){
         this.topics.push(
           <Button key = {i}
                   id = {i}

@@ -15,7 +15,7 @@ export default class Photos extends Component {
             t: false,
         };
 
-        this.folder = "/pics/me/";
+        this.folder = "pics/me/";
         
         for(var i=0; i<7; i++){
             for(var j=0; j<3; j++){

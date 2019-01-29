@@ -46,6 +46,35 @@
     font-family: "sunshine";
     src: url("fonts/Sunshine.ttf") format("truetype");
   }
+
+  @font-face {
+    font-family: "medinah";
+    src: url("fonts/Medinah.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "always";
+    src: url("fonts/Always\ In\ My\ Heart.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "beautiful";
+    src: url("fonts/justbeautifulsimplicity.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "fool";
+    src: url("fonts/Fool\ For\ Love.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "luna";
+    src: url("fonts/Luna.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "today";
+    src: url("fonts/Today\ is\ the\ Oldest\ and\ Youngest\ You\ Will\ Ever\ Be.ttf") format("truetype");
+  }
+  
   
   @font-face {
     font-family: "historial";
