@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Container} from 'reactstrap';
 import './Favorites.css';
 import FlipCard from "./FlipCard/FlipCard";
+import $ from 'jquery';
 
 export default class Favorites extends Component {
 
@@ -9,6 +10,13 @@ export default class Favorites extends Component {
         super(props);
 
         this.favs = props.favs;
+
+        $(document).ready(function() {
+            $('.hover').on('touchstart touchend', function(e) {
+                e.preventDefault();
+                $(this).toggleClass('hover_effect');
+            });
+        });
 
         this.x = window.innerWidth || 
             document.documentElement.clientWidth || 
