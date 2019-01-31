@@ -12,7 +12,7 @@ export default class Tabs extends Component {
     this.topics = [];
     this.items = props.items;
     this.state = {
-      activeTab: 2
+      activeTab: 1
     };
 
     

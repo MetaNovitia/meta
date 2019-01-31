@@ -1,0 +1,49 @@
+.qa{
+    margin-top: 30px;
+    padding-left:0%;
+    padding-right:0%;
+}
+
+.triangle-down {
+    position: relative;
+    top: 10px;
+    justify-self: center;
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+    border-top: 20px solid rgb(216, 111, 111);
+    border-bottom: 0px;
+
+}
+
+.triangle-down:hover {
+    border-top: 22px solid rgb(207, 73, 73);
+	border-left: 11px solid transparent;
+	border-right: 11px solid transparent;
+    border-bottom: 0px;
+}
+
+.triangle-up {
+    position: relative;
+    bottom: 20px;
+    justify-self: center;
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+    border-bottom: 20px solid rgb(216, 111, 111);
+    border-top: 0px;
+}
+
+.triangle-up:hover {
+    border-bottom: 22px solid rgb(207, 73, 73);
+	border-left: 11px solid transparent;
+	border-right: 11px solid transparent;
+    border-top: 0px;
+}
+
+.ansbtn{
+    padding-top: 25px;
+    padding-bottom: 0px;
+}

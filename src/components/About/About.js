@@ -5,7 +5,9 @@ import Footer from '../Footer/Footer';
 import Tabs from './Tabs/Tabs';
 import Photos from './Photos/Photos';
 import Favorites from './Favorites/Favorites';
+import QA from './QA/QA';
 import $ from 'jquery';
+import back from './back.jpg';
 import '../backcolors.css'
 import './About.css';
 
@@ -17,6 +19,7 @@ export default class About extends Component {
         this.processData = this.processData.bind(this);
         this.favorites = [];
         this.qa = [];
+        this.tabs = [];
 
         this.state = {
             family: false,
@@ -37,14 +40,14 @@ export default class About extends Component {
 
         window.onresize = this.toggle
 
-        this.tabs = <Tabs   items = {
-                    [<Photos></Photos>,
-                    <Row>2</Row>,
-                    <Favorites favs = {this.favorites}></Favorites>,
-                    <Row>4</Row>,
-                    <Row>5</Row>]
-                    } 
-                    topics={["Photos","Q&A","Favorites","RankLists","WordCloud"]}></Tabs>
+        // this.tabs = <Tabs   items = {
+        //             [<Photos />,
+        //             <QA qa = {this.qa}/>,
+        //             <Favorites favs = {this.favorites} />,
+        //             <Row>4</Row>,
+        //             <Row>5</Row>]
+        //             } 
+        //             topics={["Photos","Q&A","Favorites","RankLists","WordCloud"]}></Tabs>
 
 
         $.ajax({
@@ -58,25 +61,26 @@ export default class About extends Component {
 
         data = data.split('\n');
 
+
         for(var i=1; i<data.length; i++){
             var line = data[i].split(',');
             var temp = "";
             while(line.length>3){
                 temp=','+line.pop()+temp;
             }
-            line[2]+=temp
+            line[2]+=temp;
             
             if(line[0]==="Favorite"){
                 this.favorites.push(line);
-            }else if(line[0]==="QA"){
+            }else if(line[0]==="QA" || line[0]==="QA2"){
                 this.qa.push(line);
             }
         }
 
         this.tabs = <Tabs   items = {
-            [<Photos></Photos>,
-            <Row>2</Row>,
-            <Favorites favs = {this.favorites}></Favorites>,
+            [<Photos/>,
+            <QA qa={this.qa}/>,
+            <Favorites favs = {this.favorites} />,
             <Row>4</Row>,
             <Row>5</Row>]
             } 
@@ -107,34 +111,37 @@ export default class About extends Component {
         return (
             <Container 
                     fluid 
-                    className="home center"
+                    className="parallax"
             >
-                <NavBar open="home" f='gray'></NavBar>
-                <Row    className="garden center"
-                        style={
-                            {
-                                fontSize:((this.x)/1300*130).toString()+"px",
-                                overflow: "hidden",
-                                whiteSpace: "nowrap"
+                <img src={back} alt="back" className="parallax__layer parallax__layer--back"/>
+                <div className="parallax__layer parallax__layer--base">
+                    <NavBar open="home" f='gray'></NavBar>
+                    <Row    className="garden center"
+                            style={
+                                {
+                                    fontSize:((this.x)/1300*130).toString()+"px",
+                                    overflow: "hidden",
+                                    whiteSpace: "nowrap"
+                                }
                             }
-                        }
-                >------------ About Me ------------</Row>
+                    >------------ About Me ------------</Row>
 
-                <Row    className="center"
-                >
-                    {this.tabs}
-                </Row>
+                    <Row    className="center"
+                    >
+                        {this.tabs}
+                    </Row>
 
-                <Row    className="garden center"
-                        style={
-                            {
-                                fontSize:((this.x)/1300*130).toString()+"px",
-                                overflow: "hidden",
-                                whiteSpace: "nowrap"
+                    <Row    className="garden center"
+                            style={
+                                {
+                                    fontSize:((this.x)/1300*130).toString()+"px",
+                                    overflow: "hidden",
+                                    whiteSpace: "nowrap"
+                                }
                             }
-                        }
-                >-----------------------------</Row>
-                <Footer></Footer>
+                    >-----------------------------</Row>
+                    <Footer></Footer>
+                </div>
             </Container>
         );
     }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Row } from 'reactstrap';
 import './FlipCard.css';
+import getPastel from '../../../getPastel';
 
 export default class Favorites extends Component {
 
@@ -15,29 +16,8 @@ export default class Favorites extends Component {
             family: false
         }
 
-        var x = 140;        // brightness
-        var c = 20;         // saturation
-        var y = 255-x-c;
+        var color = getPastel();
         var d = 60;
-        var color = [x,x,x];
-
-        var change = Math.floor(Math.random()*3);
-        var other = 2;
-
-        if (change===1){
-            color[1]=x+20;
-            if(Math.random()<0.5){
-                color[0] = x+y;
-            }else{
-                color[2] = x+y;
-            }
-        }else{
-            if (change===2){
-                other = 0;
-            }
-            color[other] = x+y;
-            color[change] = Math.floor(Math.random() * y) +x;
-        }
 
         this.color = "rgb("+color[0].toString()+","+color[1].toString()+","+color[2].toString()+")";
         this.color2 = "rgb("+(color[0]-d).toString()+","+(color[1]-d).toString()+","+(color[2]-d).toString()+")";
@@ -71,7 +51,8 @@ export default class Favorites extends Component {
                         className="flip-card"
                         style={
                             {
-                                height: (this.y/6).toString()+"px",
+                                // height: (this.y/6).toString()+"px",
+                                height: "20vh",
                                 width: "27%",
                                 display: "inline-table"
                             }
